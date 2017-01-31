@@ -11,11 +11,20 @@ buildscript {
 }
 
 //apply plugin: 'org.openflexo.buildconfig'
-apply plugin: 'java'
-apply plugin: 'net.researchgate.release'
 
 project.allprojects {
+    apply plugin: 'java'
+    apply plugin: 'net.researchgate.release'
+
     group = "org.openflexo"
+
+    repositories {
+        maven { url uri('https://maven.openflexo.org/artifactory/openflexo-deps/') }
+    }
+
+    dependencies {
+        compile "junit:junit:4.12"
+    }
 }
 
 /*
