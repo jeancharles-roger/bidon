@@ -16,7 +16,6 @@ apply plugin: 'net.researchgate.release'
 
 project.allprojects {
     group = "org.openflexo"
-    version = "1.0-SNAPSHOT"
 }
 
 /*
