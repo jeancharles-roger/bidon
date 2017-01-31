@@ -6,9 +6,36 @@ buildscript {
         classpath group: 'org.openflexo', name: 'buildplugin', version: '+'
         classpath group: 'org.openflexo', name: 'buildconfig', version: '1.8.1-SNAPSHOT'
         classpath 'org.anarres.gradle:gradle-sablecc-plugin:[1.0.4,)'
+        classpath 'net.researchgate:gradle-release:2.4.0'
     }
 }
 
-apply plugin: 'org.openflexo.buildconfig'
+//apply plugin: 'org.openflexo.buildconfig'
+apply plugin: 'java'
+apply plugin: 'net.researchgate.release'
 
-project.allprojects { version = "1.0-SNAPSHOT" }
+project.allprojects {
+    group = "org.openflexo"
+    version = "1.0-SNAPSHOT"
+}
+
+/*
+<configuration>
+    <tagNameFormat>${project.name}-@{project.version}</tagNameFormat>
+    <addSchema>true</addSchema>
+    <branchName>${developmentVersion}</branchName>
+    <remoteTagging>false</remoteTagging>
+    <!-- permanent configuration -->
+    <!-- update the versions in the branches -->
+    <updateBranchVersions>true</updateBranchVersions>
+    <updateWorkingCopyVersions>false</updateWorkingCopyVersions>
+    <updateVersionsToSnapshot>true</updateVersionsToSnapshot>
+    <!-- do not update dependencies automatically -->
+    <updateDependencies>false</updateDependencies>
+    <!-- automatically assign parent version so modules -->
+    <autoVersionSubmodules>true</autoVersionSubmodules>
+    <!-- temp parameters to be removed when tests are done -->
+    <pushChanges>true</pushChanges>
+    <localCheckout>true</localCheckout>
+</configuration>
+ */
